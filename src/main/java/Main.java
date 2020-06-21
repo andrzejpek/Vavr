@@ -1,6 +1,4 @@
 import io.vavr.Tuple;
-import io.vavr.collection.HashMap;
-import io.vavr.collection.Map;
 
 public class Main {
 
@@ -15,13 +13,13 @@ public class Main {
         System.out.println(Cube.cubeRoot(1.0,27.0));
         System.out.println(Euler.euler(20));
 
-        Person person = new Person("Andrzej","Pękala");
-        Person person1 = new Person("Janek","Janek");
-        person.addAdress(person, "Lodz",21,"95-050");
-        person1.addAdress(person1,"Kraków",19,"96-201");
-        Person.showPerson();
-
-
+        Tuple person =  Person.Person("Andrzej","Andrzej");
+        Tuple person1 = Person.Person("Janek","Janek");
+        person1=Person.addAdress(person1,"Kraków",19,"96-201");
+        System.out.println(person);
+        person = Person.addAdress(person,"łodz",23,"95-211");
+        System.out.println(person);
+        System.out.println(person1);
     }
 
 
